@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "basic_web_service", "basic_web_service", "{EDDA6F90-D9C6-4F80-B87B-18B6AFA7FF93}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "simpleWebsite", "basic_web_service\simpleWebsite\simpleWebsite.csproj", "{ED979C70-46B0-486B-8C28-0D2457E84811}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "simpleWebsite", "C:\Users\Mariusz\Desktop\C#\project1\simpleWebsite\simpleWebsite.csproj", "{ED979C70-46B0-486B-8C28-0D2457E84811}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
