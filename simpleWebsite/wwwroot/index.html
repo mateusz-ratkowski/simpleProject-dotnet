@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .chat-container {
+            width: 400px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat-box {
+            flex-grow: 1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px;
+            overflow-y: auto;
+            height: 200px;
+            background-color: #f9f9f9;
+        }
+
+        .chat-box p {
+            margin: 0;
+            padding: 4px 0;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <input id="nickname" type="text" placeholder="Enter your nickname">
+
+        <div id="chat-box" class="chat-box">
+            <!-- Chat messages will appear here -->
+        </div>
+
+        <div class="input-group">
+            <input id="message" type="text" placeholder="Enter your message">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const nicknameInput = document.getElementById('nickname');
+        const chatBox = document.getElementById('chat-box');
+        const messageInput = document.getElementById('message');
+        const sendButton = document.getElementById('send-button');
+
+        // Handle send button click
+        sendButton.addEventListener('click', async () => {
+            const nickname = nicknameInput.value.trim();
+            const message = messageInput.value.trim();
+
+            if (!nickname) {
+                alert('Please enter your nickname.');
+                return;
+            }
+
+            if (!message) {
+                alert('Please enter a message.');
+                return;
+            }
+
+            // Create message object
+            const chatMessage = {
+                nickname: nickname,
+                message: message
+            };
+
+            // Send message to the server using fetch
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(chatMessage)
+                });
+
+                if (response.ok) {
+                    // Append message to chat box
+                    const newMessage = document.createElement('p');
+
+                    const responseData = await response.json();
+
+                    console.log(responseData);
+
+                    newMessage.textContent = `[${responseData.receivedAt}: ${nickname}]: ${message}`;
+                    chatBox.appendChild(newMessage);
+
+                    // Clear the message input field
+                    messageInput.value = '';
+                } else {
+                    alert('Failed to send message.');
+                }
+            } catch (error) {
+                console.error('Error sending message:', error);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "kNKYPVcngCT/r1GyCWAEkL+fTfoM/UAb+tlmUgozWMs=",
+  "Hash": "yuUV/mU7GckWlUwovFikieDFH6b9OeUN6Pso7UGoUXw=",
   "Source": "simpleWebsite",
   "BasePath": "_content/simpleWebsite",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "simpleWebsite\\wwwroot",
+      "Source": "simpleWebsite",
+      "ContentRoot": "c:\\Users\\Mariusz\\Desktop\\C#\\project1\\simpleWebsite\\wwwroot\\",
+      "BasePath": "_content/simpleWebsite",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "c:\\Users\\Mariusz\\Desktop\\C#\\project1\\simpleWebsite\\wwwroot\\index.html",
+      "SourceId": "simpleWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "c:\\Users\\Mariusz\\Desktop\\C#\\project1\\simpleWebsite\\wwwroot\\",
+      "BasePath": "_content/simpleWebsite",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
 }

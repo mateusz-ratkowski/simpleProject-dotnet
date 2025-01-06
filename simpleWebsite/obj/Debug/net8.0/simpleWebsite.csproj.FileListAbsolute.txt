@@ -49,3 +49,4 @@ C:\Users\Mariusz\Desktop\C#\project1\simpleWebsite\obj\Debug\net8.0\refint\simpl
 C:\Users\Mariusz\Desktop\C#\project1\simpleWebsite\obj\Debug\net8.0\simpleWebsite.pdb
 C:\Users\Mariusz\Desktop\C#\project1\simpleWebsite\obj\Debug\net8.0\simpleWebsite.genruntimeconfig.cache
 C:\Users\Mariusz\Desktop\C#\project1\simpleWebsite\obj\Debug\net8.0\ref\simpleWebsite.dll
+c:\Users\Mariusz\Desktop\C#\project1\simpleWebsite\bin\Debug\net8.0\simpleWebsite.staticwebassets.runtime.json
