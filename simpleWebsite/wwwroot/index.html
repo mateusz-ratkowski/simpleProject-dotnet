@@ -103,13 +103,11 @@
                 return;
             }
 
-            // Create message object
             const chatMessage = {
                 nickname: nickname,
                 message: message
             };
 
-            // Send message to the server using fetch
             try {
                 const response = await fetch('/chat', {
                     method: 'POST',
@@ -120,7 +118,6 @@
                 });
 
                 if (response.ok) {
-                    // Append message to chat box
                     const newMessage = document.createElement('p');
 
                     const responseData = await response.json();
@@ -130,7 +127,6 @@
                     newMessage.textContent = `[${responseData.receivedAt}: ${nickname}]: ${message}`;
                     chatBox.appendChild(newMessage);
 
-                    // Clear the message input field
                     messageInput.value = '';
                 } else {
                     alert('Failed to send message.');
